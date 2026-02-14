@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favicon Generator</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      padding: 40px;
+      background: var(--color-bg-primary);
+      color: white;
+    }
+    .generator {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .generator h1 {
+      margin-bottom: 20px;
+    }
+    .generator p {
+      margin-bottom: 30px;
+    }
+    .color-picker {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .color {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .color:hover {
+      transform: scale(1.1);
+    }
+    .color.selected {
+      border-color: var(--color-accent);
+    }
+    .btn {
+      padding: 12px 24px;
+      background: var(--gradient-primary);
+      border: none;
+      border-radius: var(--radius-full);
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+      margin: 5px;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    .preview {
+      margin: 30px 0;
+    }
+    .preview img {
+      max-width: 128px;
+      border: 4px solid white;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="generator">
+    <h1>🎨 Favicon Generator</h1>
+    <p>Customize your favicon by selecting colors</p>
+
+    <div class="color-picker" id="colorPicker"></div>
+
+    <div class="preview">
+      <img id="favicon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+PHN0b3Agb2ZZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhiNWNmNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMjAiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTAiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+UjwvdGV4dD48L3N2Zz4=" alt="Favicon Preview">
+    </div>
+
+    <div>
+      <button class="btn" onclick="downloadFavicon('ico')">Download .ICO</button>
+      <button class="btn" onclick="downloadFavicon('svg')">Download .SVG</button>
+    </div>
+  </div>
+
+  <script>
+    const colors = ['#6366f1', '#8b5cf6', '#06b6d4', '#ec4899', '#14b8a6', '#f59e0b', '#ef4444'];
+    let selectedColor = colors[0];
+    let colorIndex = 0;
+
+    const colorPicker = document.getElementById('colorPicker');
+
+    colors.forEach((color, index) => {
+      const div = document.createElement('div');
+      div.className = 'color' + (index === 0 ? ' selected' : '');
+      div.style.background = color;
+      div.onclick = () => selectColor(color, div);
+      colorPicker.appendChild(div);
+    });
+
+    function selectColor(color, element) {
+      selectedColor = color;
+      document.querySelectorAll('.color').forEach(c => c.classList.remove('selected'));
+      element.classList.add('selected');
+      updatePreview();
+    }
+
+    function updatePreview() {
+      const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:${selectedColor}"/>
+      <stop offset="100%" style="stop-color:${adjustColor(selectedColor, 20)}"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="url(#gradient)"/>
+  <text x="50" y="65" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle" fill="white">R</text>
+</svg>`;
+
+      document.getElementById('favicon').src = 'data:image/svg+xml;base64,' + btoa(svg);
+    }
+
+    function adjustColor(color, amount) {
+      const hex = color.replace('#', '');
+      const r = Math.min(255, parseInt(hex.substr(0, 2), 16) + amount);
+      const g = Math.min(255, parseInt(hex.substr(2, 2), 16) + amount);
+      const b = Math.min(255, parseInt(hex.substr(4, 2), 16) + amount);
+      return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+    }
+
+    function downloadFavicon(format) {
+      const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:${selectedColor}"/>
+      <stop offset="100%" style="stop-color:${adjustColor(selectedColor, 20)}"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="url(#gradient)"/>
+  <text x="50" y="65" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle" fill="white">R</text>
+</svg>`;
+
+      if (format === 'svg') {
+        const blob = new Blob([svg], {type: 'image/svg+xml'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'favicon.svg';
+        a.click();
+        URL.revokeObjectURL(url);
+      } else if (format === 'ico') {
+        // Create ICO file (simple version)
+        const canvas = document.createElement('canvas');
+        canvas.width = 32;
+        canvas.height = 32;
+        const ctx = canvas.getContext('2d');
+
+        const color = selectedColor;
+        ctx.fillStyle = color;
+        ctx.fillRect(0, 0, 32, 32);
+
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 20px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('R', 16, 20);
+
+        const imageData = canvas.toDataURL('image/png');
+        const response = fetch(imageData);
+        const blob = response.then(r => r.blob());
+
+        blob.then(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'favicon.ico';
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

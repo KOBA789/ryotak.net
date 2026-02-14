@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ryotak.net - Professional Portfolio Website showcasing web development projects, skills, and services.">
+  <meta name="keywords" content="portfolio, web development, coding, projects, technology">
+  <meta name="author" content="Ryotak">
+  <meta name="theme-color" content="#0f0f1a">
+
+  <title>Ryotak.net | Professional Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Ryotak.net | Professional Portfolio">
+  <meta property="og:description" content="Showcasing web development projects, skills, and creative solutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ryotak.net">
+  <meta property="og:image" content="https://ryotak.net/assets/og-image.jpg">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ryotak.net | Professional Portfolio">
+  <meta name="twitter:description" content="Showcasing web development projects, skills, and creative solutions.">
+  <meta name="twitter:image" content="https://ryotak.net/assets/twitter-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ryotak",
+    "description": "Professional web developer and creative technologist",
+    "url": "https://ryotak.net",
+    "sameAs": [
+      "https://github.com/ryotak",
+      "https://linkedin.com/in/ryotak",
+      "https://twitter.com/ryotak"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">Ryotak.net</a>
+      <div class="nav-links">
+        <a href="#hero" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge reveal">Available for Work</span>
+        <h1 class="reveal">Hello, I'm <span class="gradient-text">Ryotak</span></h1>
+        <p class="reveal">
+          A passionate <span id="typewriter" class="gradient-text"></span>
+        </p>
+        <div class="hero-buttons reveal">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal-left">
+          <h2>About <span class="gradient-text">Me</span></h2>
+          <p>
+            I'm a passionate web developer with a keen eye for design and a love for creating innovative digital experiences. With expertise in modern web technologies, I build responsive, accessible, and performant applications that make a difference.
+          </p>
+          <p>
+            My journey in web development started with curiosity and evolved into a deep passion for crafting elegant solutions to complex problems. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.
+          </p>
+          <p>
+            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.
+          </p>
+        </div>
+        <div class="about-image reveal-right">
+          <img src="assets/images/profile.jpg" alt="Ryotak - Profile Photo" onerror="this.style.display='none'" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="skills" id="skills">
+        <div class="skills-section reveal">
+          <h2>My <span class="gradient-text">Skills</span></h2>
+          <p>Technologies and tools I work with to bring ideas to life</p>
+        </div>
+
+        <div class="skills-grid reveal">
+          <div class="skill-card">
+            <h3>🎨 Design</h3>
+            <p>UI/UX Design, Wireframing, Prototyping, Visual Design</p>
+          </div>
+          <div class="skill-card">
+            <h3>💻 Frontend</h3>
+            <p>HTML, CSS, JavaScript, React, Vue, Angular, TypeScript</p>
+          </div>
+          <div class="skill-card">
+            <h3>⚙️ Backend</h3>
+            <p>Node.js, Python, PostgreSQL, MongoDB, REST APIs</p>
+          </div>
+          <div class="skill-card">
+            <h3>🔧 Tools</h3>
+            <p>Git, Docker, AWS, Firebase, Webpack, Vite</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats-section reveal">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3 data-target="50">0+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item">
+            <h3 data-target="30">0+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat-item">
+            <h3 data-target="5">0+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-item">
+            <h3 data-target="100">0%</h3>
+            <p>Satisfaction Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="projects-section reveal">
+        <h2>Featured <span class="gradient-text">Projects</span></h2>
+        <p>A selection of my recent work and creative endeavors</p>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Projects will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-section reveal">
+        <h2>Get In <span class="gradient-text">Touch</span></h2>
+        <p>Have a project in mind? Let's work together to bring your ideas to life.</p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-card">
+          <h3>📧 Email</h3>
+          <p>Get in touch for project inquiries</p>
+          <a href="mailto:hello@ryotak.net">hello@ryotak.net</a>
+        </div>
+        <div class="contact-card">
+          <h3>📱 Social</h3>
+          <p>Connect on social media</p>
+          <div class="social-links">
+            <a href="https://github.com/ryotak" target="_blank" aria-label="GitHub">github</a>
+            <a href="https://linkedin.com/in/ryotak" target="_blank" aria-label="LinkedIn">linkedin</a>
+            <a href="https://twitter.com/ryotak" target="_blank" aria-label="Twitter">twitter</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Project inquiry" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="https://github.com/ryotak" target="_blank" aria-label="GitHub">github</a>
+          <a href="https://linkedin.com/in/ryotak" target="_blank" aria-label="LinkedIn">linkedin</a>
+          <a href="https://twitter.com/ryotak" target="_blank" aria-label="Twitter">twitter</a>
+        </div>
+        <p>&copy; <span id="current-year"></span> Ryotak.net. All rights reserved.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>Built with passion & creativity</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/animations.js"></script>
+
+  <!-- Project Data -->
+  <script>
+    const projects = [
+      {
+        id: 1,
+        title: 'E-Commerce Platform',
+        description: 'A modern e-commerce platform with real-time inventory management, secure payments, and an intuitive user interface. Built with React and Node.js.',
+        technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+        image: 'assets/images/project1.jpg',
+        link: '#',
+        github: '#'
+      },
+      {
+        id: 2,
+        title: 'Task Management App',
+        description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+        technologies: ['Vue.js', 'Firebase', 'Tailwind CSS'],
+        image: 'assets/images/project2.jpg',
+        link: '#',
+        github: '#'
+      },
+      {
+        id: 3,
+        title: 'Weather Dashboard',
+        description: 'A beautiful weather dashboard with accurate forecasts, interactive maps, and location-based weather alerts.',
+        technologies: ['JavaScript', 'API Integration', 'Chart.js'],
+        image: 'assets/images/project3.jpg',
+        link: '#',
+        github: '#'
+      },
+      {
+        id: 4,
+        title: 'Social Media Dashboard',
+        description: 'Analytics dashboard for social media management with real-time metrics, reporting, and scheduling capabilities.',
+        technologies: ['React', 'D3.js', 'REST APIs'],
+        image: 'assets/images/project4.jpg',
+        link: '#',
+        github: '#'
+      },
+      {
+        id: 5,
+        title: 'Portfolio Generator',
+        description: 'A tool for creating and managing personal portfolios with customizable themes and automatic deployment.',
+        technologies: ['Next.js', 'Vercel', 'Tailwind CSS'],
+        image: 'assets/images/project5.jpg',
+        link: '#',
+        github: '#'
+      },
+      {
+        id: 6,
+        title: 'Chat Application',
+        description: 'Real-time chat application with private and group chats, file sharing, and end-to-end encryption.',
+        technologies: ['Socket.io', 'Express', 'MongoDB', 'React'],
+        image: 'assets/images/project6.jpg',
+        link: '#',
+        github: '#'
+      }
+    ];
+
+    // Initialize project cards
+    function initProjects() {
+      const projectsGrid = document.getElementById('projects-grid');
+
+      if (!projectsGrid) return;
+
+      projectsGrid.innerHTML = projects.map(project => `
+        <div class="project-card" data-project-id="${project.id}">
+          <div class="project-image">
+            <img src="${project.image}" alt="${project.title}" onerror="this.style.display='none'" loading="lazy">
+            <div class="project-overlay">
+              <button>View Details</button>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+          </div>
+          <div class="project-footer">
+            <div class="tech-stack">
+              ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Add click event listeners to project cards
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const projectId = this.dataset.projectId;
+          const project = projects.find(p => p.id === parseInt(projectId));
+
+          if (project && window.portfolioAnimations) {
+            window.portfolioAnimations.modal.open(project);
+          }
+        });
+      });
+    }
+
+    // Initialize typewriter effect
+    function initTypewriter() {
+      const typewriterElement = document.getElementById('typewriter');
+      if (!typewriterElement) return;
+
+      const texts = [
+        'Web Developer',
+        'UI/UX Designer',
+        'Problem Solver',
+        'Creative Thinker'
+      ];
+
+      if (window.portfolioAnimations) {
+        const typewriter = new Typewriter(
+          typewriterElement,
+          texts,
+          {
+            typingSpeed: 50,
+            deletingSpeed: 30,
+            delayBetween: 2000
+          }
+        );
+      }
+    }
+
+    // Initialize form submission
+    function initForm() {
+      const form = document.querySelector('.contact-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        // Simulate form submission
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+
+        setTimeout(() => {
+          submitButton.textContent = 'Message Sent!';
+          submitButton.style.background = 'var(--color-teal)';
+
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            submitButton.style.background = '';
+            form.reset();
+          }, 2000);
+        }, 1500);
+      });
+    }
+
+    // Initialize smooth scrolling for navigation links
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+
+          if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+
+            if (target) {
+              const navbarHeight = document.querySelector('.navbar').offsetHeight;
+              const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+              window.scrollTo({
+                top: targetPosition - navbarHeight,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+    }
+
+    // Initialize navbar active state on scroll
+    function initNavbarActiveState() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+
+      let current = '';
+
+      const updateActiveLink = AnimationUtils.debounce(() => {
+        current = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      }, 100);
+
+      window.addEventListener('scroll', updateActiveLink);
+    }
+
+    // Update current year in footer
+    function updateYear() {
+      const yearElement = document.getElementById('current-year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize projects
+      initProjects();
+
+      // Initialize typewriter
+      initTypewriter();
+
+      // Initialize form
+      initForm();
+
+      // Initialize smooth scrolling
+      initSmoothScroll();
+
+      // Initialize navbar active state
+      initNavbarActiveState();
+
+      // Update year
+      updateYear();
+
+      // Hide loading screen
+      setTimeout(() => {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.classList.add('hidden');
+        }
+      }, 1000);
+    });
+
+    // Add smooth transition to project images
+    document.querySelectorAll('.project-image img').forEach(img => {
+      img.style.transition = 'opacity 0.3s ease';
+    });
+  </script>
+</body>
+</html>

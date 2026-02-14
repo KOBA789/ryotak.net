@@ -1,0 +1,33 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Generated Images
+assets/images/*.jpg
+assets/images/*.png
+assets/images/*.jpeg
+
+# Uncomment if using the placeholder generator
+# assets/images/*.webp
+# assets/images/*.svg
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment Files
+.env
+.env.local
+.env.*.local
